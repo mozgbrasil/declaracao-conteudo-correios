@@ -6,6 +6,7 @@ class Controller
     public function view($name, $vars = [])
     {
         extract($vars);
-        include __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'Resources'. DIRECTORY_SEPARATOR .'views' . DIRECTORY_SEPARATOR . $name . '.php';
+        $ds = DIRECTORY_SEPARATOR;
+        include __DIR__ . $ds . '..' . $ds . 'Resources'. $ds .'views' . $ds . $name . '.php';
     }
 }

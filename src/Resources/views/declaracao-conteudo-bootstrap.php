@@ -1,3 +1,4 @@
+<?php // phpcs:ignoreFile -- this is not a core file ?>
 <!doctype html>
 <html lang="pt-br">
     <head>
@@ -78,7 +79,7 @@
                         </thead>
                         <tbody>
                             <?php $totalPeso = 0; ?>
-                            <?php foreach($itens->getItens() as $item): ?>
+                            <?php foreach ($itens->getItens() as $item) : ?>
                                 <tr>
                                     <td class="text-center"><?php echo $item->getDescricao(); ?></td>
                                     <td class="text-center"><?php echo (string)$item->getQuantidade(); ?></td>

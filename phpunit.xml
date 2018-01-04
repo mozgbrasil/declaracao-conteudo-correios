@@ -15,11 +15,13 @@
     </testsuites>
     <logging>
         <log type="coverage-clover" target="tests/_reports/logs/clover.xml"/>
-        <log type="testdox-text" target="tests/_reports/testdox/executed.txt"/>
     </logging>
     <filter>
         <whitelist processUncoveredFilesFromWhitelist="true">
             <directory suffix=".php">./src</directory>
+            <exclude>
+                <directory>./src/Resources</directory>
+            </exclude>
         </whitelist>
     </filter>
 </phpunit>
