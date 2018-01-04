@@ -19,5 +19,5 @@ install:
 script: vendor/bin/phpcs --standard=PSR2 src && vendor/bin/phpunit
 
 after_script:
-  - mv tests/_reports/clover.xml clover.xml
+  - mv tests/_reports/logs/clover.xml clover.xml
   - ./cc-test-reporter after-build --coverage-input-type clover --exit-code $TRAVIS_TEST_RESULT
