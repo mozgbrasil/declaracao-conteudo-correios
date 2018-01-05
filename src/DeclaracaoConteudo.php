@@ -19,6 +19,7 @@ class DeclaracaoConteudo extends Controller
     private $remetente;
     private $destinatario;
     private $itens;
+    private $valorTotal;
 
     /**
      * DeclaracaoConteudo constructor.
@@ -26,15 +27,18 @@ class DeclaracaoConteudo extends Controller
      * @param PessoaInterface  $remetente
      * @param PessoaInterface  $destinatario
      * @param ItemBagInterface $itens
+     * @param string|int       $valorTotal
      */
     public function __construct(
         PessoaInterface $remetente,
         PessoaInterface $destinatario,
-        ItemBagInterface $itens
+        ItemBagInterface $itens,
+        $valorTotal = 0.00
     ) {
         $this->remetente = $remetente;
         $this->destinatario = $destinatario;
         $this->itens = $itens;
+        $this->valorTotal = $valorTotal;
     }
 
     /**
@@ -42,10 +46,11 @@ class DeclaracaoConteudo extends Controller
      */
     public function imprimirHtml()
     {
-        $this->view('declaracao-conteudo-bootstrap', [
+        return $this->view('declaracao-conteudo-bootstrap', [
             'remetente' => $this->remetente,
             'destinatario' => $this->destinatario,
             'itens' => $this->itens,
+            'valorTotal' => $this->valorTotal
         ]);
     }
 }

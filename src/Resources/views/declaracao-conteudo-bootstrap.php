@@ -78,18 +78,16 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php $totalPeso = 0; ?>
                             <?php foreach ($itens->getItens() as $item) : ?>
                                 <tr>
                                     <td class="text-center"><?php echo $item->getDescricao(); ?></td>
                                     <td class="text-center"><?php echo (string)$item->getQuantidade(); ?></td>
                                     <td class="text-center"><?php echo (string)$item->getPeso(); ?></td>
                                 </tr>
-                                <?php $totalPeso += $item->getPeso(); ?>
                             <?php endforeach; ?>
                             <tr>
                                 <td class="text-center" colspan="2">Valor Total</td>
-                                <td class="text-center"><?php echo $totalPeso; ?></td>
+                                <td class="text-center"><?php echo 'R$ ' . str_replace('.', ',', (string)$valorTotal); ?></td>
                             </tr>
                         </tbody>
                     </table>

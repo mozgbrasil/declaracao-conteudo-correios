@@ -63,10 +63,11 @@ Exibindo a declaração de conteúdo:
 $declaracao = new \Click4Web\DeclaracaoConteudo\DeclaracaoConteudo(
     $remetente,
     $destinatario,
-    $itens
+    $itens,
+    219.98 // Valor Total (R$)
 );
 
-$declaracao->imprimirHtml();
+echo $declaracao->imprimirHtml();
 ```
 
 ## Contribuindo
